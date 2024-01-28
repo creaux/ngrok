@@ -11,6 +11,10 @@ parameters:
   displayName: Port
   required: true
   description: Enter the port to expose publicly. Only HTTP ports work.
+- name: AUTH_TOKEN
+  displayName: NGROK Authentification Token
+  required: true
+  description: Enter NGROK authentification token available in your NGROK account
 objects:
 - apiVersion: v1
   kind: Service
@@ -51,6 +55,8 @@ objects:
             value: "${HOST}"
           - name: FORWARD_PORT
             value: "${PORT}"
+          - name: NGROK_AUTH_TOKEN
+            value: "${AUTH_TOKEN}"
           image: " "
           imagePullPolicy: Always
           livenessProbe:
