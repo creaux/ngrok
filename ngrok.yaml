@@ -120,5 +120,5 @@ objects:
     tags:
     - from:
         kind: DockerImage
-        name: quay.io/openshiftfordevelopers/ngrok:latest
+        name: registry.hub.docker.com/creaux/ngrok:latest
       name: latest
