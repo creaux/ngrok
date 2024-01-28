@@ -61,8 +61,10 @@ objects:
           imagePullPolicy: Always
           livenessProbe:
             failureThreshold: 3
-            tcpSocket:
+            httpGet:
+              path: /
               port: 8080
+              scheme: HTTP
             initialDelaySeconds: 1
             periodSeconds: 10
             successThreshold: 1
@@ -73,8 +75,10 @@ objects:
             protocol: TCP
           readinessProbe:
             failureThreshold: 3
-            tcpSocket:
+            httpGet:
+              path: /
               port: 8080
+              scheme: HTTP
             initialDelaySeconds: 1
             periodSeconds: 10
             successThreshold: 1
