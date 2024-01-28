@@ -61,10 +61,8 @@ objects:
           imagePullPolicy: Always
           livenessProbe:
             failureThreshold: 3
-            httpGet:
-              path: /
+            tcpSocket:
               port: 8080
-              scheme: HTTP
             initialDelaySeconds: 1
             periodSeconds: 10
             successThreshold: 1
@@ -75,10 +73,8 @@ objects:
             protocol: TCP
           readinessProbe:
             failureThreshold: 3
-            httpGet:
-              path: /
+            tcpSocket:
               port: 8080
-              scheme: HTTP
             initialDelaySeconds: 1
             periodSeconds: 10
             successThreshold: 1
@@ -120,5 +116,5 @@ objects:
     tags:
     - from:
         kind: DockerImage
-        name: registry.hub.docker.com/creaux/ngrok:latest
+        name: quay.io/openshiftfordevelopers/ngrok:latest
       name: latest
